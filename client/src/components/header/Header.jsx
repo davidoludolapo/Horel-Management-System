@@ -113,7 +113,6 @@ import {
                       ranges={date}
                       className="date"
                       minDate={new Date()}
-                      
                     />
                   )}
                 </div>
@@ -203,5 +202,4 @@ import {
       </div>
     );
   };
-  
   export default Header;
