@@ -3,23 +3,23 @@ import bcrypt from "bcryptjs";
 import { createError } from "../utils/error.js";
 import jwt from "jsonwebtoken";
 
+
 export const register = async (req, res, next) => {
   try {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt);
+
     const newUser = new User({
-      username: req.body.username,
-      email: req.body.email,
+      ...req.body,
       password: hash,
     });
 
     await newUser.save();
-    res.status(200).send("User has been created");
-  } catch (error) {
-    next(error);
+    res.status(200).send("User has been created.");
+  } catch (err) {
+    next(err);
   }
 };
-
 export const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ username: req.body.username });
@@ -43,8 +43,8 @@ export const login = async (req, res, next) => {
         httpOnly: true,
       })
       .status(200)
-      .json({ ...otherDetails });
-  } catch (error) {
-    next(error);
+      .json({ details: { ...otherDetails }, isAdmin });
+  } catch (err) {
+    next(err);
   }
 };
