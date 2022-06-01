@@ -1,59 +1,32 @@
 import React from "react";
+import useFetch from "../../hooks/useFetch";
 import "./featuredProperties.css";
 
 function FeaturedProperties() {
+  const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
   return (
     <div className="fp">
-      <div className="fpItem">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="fpImg" />
-        <span className="fpName">Agbnai Stare Towers</span>
-        <span className="fpCity">Madrid</span>
-        <span className="fpPrice">Starting from $120</span>
-        <div className="fpRating">
-          <button>9</button>
-          <span>Excellent</span>
-        </div>
-      </div>
-      <div className="fpItem">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="fpImg" />
-        <span className="fpName">Agbnai Stare Towers</span>
-        <span className="fpCity">Madrid</span>
-        <span className="fpPrice">Starting from $120</span>
-        <div className="fpRating">
-          <button>9</button>
-          <span>Excellent</span>
-        </div>
-      </div>
-      <div className="fpItem">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="fpImg" />
-        <span className="fpName">Agbnai Stare Towers</span>
-        <span className="fpCity">Madrid</span>
-        <span className="fpPrice">Starting from $120</span>
-        <div className="fpRating">
-          <button>9</button>
-          <span>Excellent</span>
-        </div>
-      </div>
-      <div className="fpItem">
-        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="fpImg" />
-        <span className="fpName">Agbnai Stare Towers</span>
-        <span className="fpCity">Madrid</span>
-        <span className="fpPrice">Starting from $120</span>
-        <div className="fpRating">
-          <button>9</button>
-          <span>Excellent</span>
-        </div>
-      </div>
-      <div className="fpItem">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" className="fpImg" />
-        <span className="fpName">Agbnai Stare Towers</span>
-        <span className="fpCity">Madrid</span>
-        <span className="fpPrice">Starting from $120</span>
-        <div className="fpRating">
-          <button>9</button>
-          <span>Excellent</span>
-        </div>
-      </div>
+      {loading ? (
+        "Loading"
+      ) : (
+        <>
+          {data.map((item) => (
+            <div className="fpItem" key={item._id}>
+              <img
+                src={item.photos[0]}
+                className="fpImg"
+              />
+              <span className="fpName">{item?.name}</span>
+              <span className="fpCity">{item?.city}</span>
+              <span className="fpPrice">Starting from ${item?.cheapestPrice}</span>
+             {item?.rating &&  <div className="fpRating">
+                <button>{item?.rating}</button>
+                <span>Excellent</span>
+              </div>}
+            </div>
+          ))}
+        </>
+      )}
     </div>
   );
 }
