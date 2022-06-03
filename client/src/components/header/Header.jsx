@@ -4,6 +4,7 @@ import {
     faCar,
     faPerson,
     faPlane,
+    faSearch,
     faTaxi,
   } from "@fortawesome/free-solid-svg-icons";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -62,28 +63,7 @@ import { AuthContext } from "../../context/AuthContext";
           type === "list" ? "headerContainer listMode" : "headerContainer"
         }
       >
-        <div className="headerList">
-          <div className="headerListItem active">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
-          </div>
-        </div>
+    
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
@@ -95,6 +75,7 @@ import { AuthContext } from "../../context/AuthContext";
             </p>
              { !user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
+            {/* <h2 style={{color:"red"}}>Quick Book</h2> */}
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
                 <input
@@ -200,7 +181,7 @@ import { AuthContext } from "../../context/AuthContext";
               </div>
               <div className="headerSearchItem">
                 <button className="headerBtn" onClick={handleSearch}>
-                  Search
+                  <FontAwesomeIcon icon={faSearch} className="headerIcon"/>
                 </button>
               </div>
             </div>

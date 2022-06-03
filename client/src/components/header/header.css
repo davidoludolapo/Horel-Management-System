@@ -1,75 +1,78 @@
 .header {
-  background-color: #003580;
-  color: white;
+  background: url("https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?cs=srgb&dl=pexels-thorsten-technoman-338504.jpg&fm=jpg");
+  background-position: center;
+  background-size: cover;
+  color: #333;
+  /* height: 50vh; */
   display: flex;
   justify-content: center;
   position: relative;
+  padding: 80px;
+  margin-bottom: 100px;
 }
 
 .headerContainer {
   width: 100%;
   max-width: 1024px;
   margin: 20px 0px 100px 0px;
-}
-
-.headerContainer.listMode {
-  margin: 20px 0px 0px 0px;
-}
-
-.headerList {
   display: flex;
-  gap: 40px;
-  margin-bottom: 50px;
-}
-
-.headerListItem {
-  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  color: white;
 }
 
-.headerListItem.active {
-  border: 1px solid white;
-  padding: 10px;
-  border-radius: 20px;
-}
 
 .headerDesc {
   margin: 20px 0px;
+  width: 500px;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .headerBtn {
-  background-color: #0071c2;
-  color: white;
-  font-weight: 500;
+  border-radius: 6px;
+  background: #240EFF;
+  white-space: nowrap;
+  padding: 12px 30px;
+  color: #fff;
+  font-size: 14px;
   border: none;
-  padding: 10px;
   cursor: pointer;
+  text-decoration: none;
+
 }
 
 .headerSearch {
   height: 30px;
   background-color: white;
-  border: 3px solid #febb02;
+  border: 1px solid rgb(185, 183, 183);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 10px 0px;
+  padding: 30px 0px;
   border-radius: 5px;
   position: absolute;
-  bottom: -25px;
+  bottom: -50px;
   width: 100%;
   max-width: 1024px;
+  /* margin-bottom: 60px; */
 }
 
-.headerIcon {
-  color: lightgray;
-}
 
-.headerSearchItem {
+.headerSearchItem:nth-child(1) {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #0071c2;
+  
+}
+.headerSearchItem:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: crimson;
+  
 }
 
 .headerSearchInput {
@@ -78,7 +81,7 @@
 }
 
 .headerSearchText {
-  color: lightgray;
+  color: rgb(177, 165, 165);
   cursor: pointer;
 }
 
