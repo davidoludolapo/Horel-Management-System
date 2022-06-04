@@ -1,4 +1,5 @@
 import React from 'react'
+import PrimaryButton from '../PrimaryButton'
 import "./mailList.css"
 
 function MailList() {
@@ -8,7 +9,7 @@ function MailList() {
         <span className='mailDesc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aut optio ipsam dolores fugit natus!</span>
         <div className="mailInputContainer">
             <input type="text" placeholder='Your Email' />
-            <button>Subscribe</button>
+            <PrimaryButton name={"Subscribe"}/>
         </div>
     </div>
   )

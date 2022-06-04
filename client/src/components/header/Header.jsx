@@ -67,13 +67,12 @@ import { AuthContext } from "../../context/AuthContext";
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
-              A lifetime of discounts? It's Genius.
+             Enjoy Your Dream Vacation
             </h1>
             <p className="headerDesc">
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              Make your stay special. Vacation packages designed to let you dive in and explore the very best of Imperial Resort.
             </p>
-             { !user && <button className="headerBtn">Sign in / Register</button>}
+             { !user && <button className="headerBtn">Create Account</button>}
             <div className="headerSearch">
             {/* <h2 style={{color:"red"}}>Quick Book</h2> */}
               <div className="headerSearchItem">
@@ -180,7 +179,7 @@ import { AuthContext } from "../../context/AuthContext";
                 )}
               </div>
               <div className="headerSearchItem">
-                <button className="headerBtn" onClick={handleSearch}>
+                <button className="headerSearchBtn" onClick={handleSearch}>
                   <FontAwesomeIcon icon={faSearch} className="headerIcon"/>
                 </button>
               </div>

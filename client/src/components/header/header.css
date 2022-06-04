@@ -1,5 +1,15 @@
+.headerTitle {
+  font-size: 76px;
+  text-align: center;
+}
+
 .header {
-  background: url("https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?cs=srgb&dl=pexels-thorsten-technoman-338504.jpg&fm=jpg");
+  background: linear-gradient(
+      45deg,
+      rgba(27, 27, 8, 0.62),
+      rgba(12, 8, 26, 0.58)
+    ),
+    url("https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?cs=srgb&dl=pexels-thorsten-technoman-338504.jpg&fm=jpg");
   background-position: center;
   background-size: cover;
   color: #333;
@@ -9,6 +19,7 @@
   position: relative;
   padding: 80px;
   margin-bottom: 100px;
+  /* font-size: 16px; */
 }
 
 .headerContainer {
@@ -22,17 +33,29 @@
   color: white;
 }
 
-
 .headerDesc {
   margin: 20px 0px;
   width: 500px;
+  font-size: 24px;
+  font-weight: 300;
   text-align: center;
   line-height: 1.5;
 }
 
 .headerBtn {
   border-radius: 6px;
-  background: #240EFF;
+  background: #240eff;
+  white-space: nowrap;
+  padding: 12px 60px;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.headerSearchBtn {
+  border-radius: 6px;
+  background: #240eff;
   white-space: nowrap;
   padding: 12px 30px;
   color: #fff;
@@ -40,7 +63,6 @@
   border: none;
   cursor: pointer;
   text-decoration: none;
-
 }
 
 .headerSearch {
@@ -59,20 +81,17 @@
   /* margin-bottom: 60px; */
 }
 
-
 .headerSearchItem:nth-child(1) {
   display: flex;
   align-items: center;
   gap: 10px;
   color: #0071c2;
-  
 }
 .headerSearchItem:nth-child(2) {
   display: flex;
   align-items: center;
   gap: 10px;
   color: crimson;
-  
 }
 
 .headerSearchInput {

@@ -60,6 +60,8 @@ export const NavLinks = styled.a`
   cursor: pointer;
 `;
 
+
+
 function Navbar() {
   const { user, dispatch } = useContext(AuthContext);
 
@@ -101,7 +103,7 @@ function Navbar() {
 
     <Nav>
       <NavbarContainer>
-        <Logo>Imperial</Logo>
+        <Logo><Link to="/" style={{textDecoration: "none", color:"#333"}}>IMPERIAL</Link></Logo>
         <NavMenu>
           <NavItem>
             <NavLinks>About</NavLinks>
@@ -115,8 +117,8 @@ function Navbar() {
         </NavMenu>
       </NavbarContainer>
 
-     {user ? <> <span>Hello {user.username}</span> <NavLinks> <button onClick={handleLogout}>Logout</button></NavLinks> </>  :  <> <Link to="/login"><PrimaryButton name={"Sign Up"} /></Link> 
-      <NavLinks> <Link to="/login"><PrimaryButton  name={"Log in"} /></Link> </NavLinks> </>}
+     {user ? <> <span>Hello {user.username} 😀</span> <NavLinks> <div onClick={handleLogout}><PrimaryButton  name={"Log Out"} /></div></NavLinks> </>  :  <> <Link to="/login"><PrimaryButton name={"Sign Up"} /></Link> 
+      <NavLinks> <Link style={{textDecoration:"none"}} to="/login">Login</Link> </NavLinks> </>}
     </Nav>
   );
 }
