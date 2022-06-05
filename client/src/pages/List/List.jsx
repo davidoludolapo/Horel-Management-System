@@ -10,6 +10,8 @@ import SearchItem from "../../components/SearchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
 import { useContext } from "react";
 import { SearchContext } from "../../context/SearchContext";
+import Skeleton from "../../components/Skeleton/Skeleton";
+
 
 function List() {
   const location = useLocation();
@@ -102,7 +104,7 @@ function List() {
           </div>
           <div className="listResult">
             {loading ? (
-              "loading"
+              <Skeleton type="circle"/>
             ) : (
               <>
                 {data.map((item) => (

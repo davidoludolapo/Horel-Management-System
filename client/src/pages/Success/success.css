@@ -1,0 +1,58 @@
+.success-wrapper, .cancel-wrapper{
+    background: url("https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .success, .cancel{
+    width: 100%;
+  margin: auto;
+
+    background-color: #d1caca3b;
+    padding: 90px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .success .icon {
+     color: green;
+     font-size: 40px;
+  }
+  .success h2{
+    text-transform: capitalize;
+    margin-top: 15px 0px;
+    font-weight: 900;
+    font-size: 40px;
+    color:#2b2e5c;
+  }
+  .success .email-msg{
+     font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .cancel p{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .success .description{
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .success .description .email{
+    margin-left: 5px;
+    color: blue;
+    letter-spacing: 2px;
+   
+  }

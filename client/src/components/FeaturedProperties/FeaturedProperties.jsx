@@ -1,5 +1,6 @@
 import React from "react";
 import useFetch from "../../hooks/useFetch";
+import Skeleton from "../Skeleton/Skeleton";
 import "./featuredProperties.css";
 
 function FeaturedProperties() {
@@ -7,7 +8,7 @@ function FeaturedProperties() {
   return (
     <div className="fp">
       {loading ? (
-        "Loading"
+        <Skeleton type="featured"/>
       ) : (
         <>
           {data.map((item) => (

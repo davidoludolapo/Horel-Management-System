@@ -1,5 +1,6 @@
 import React from "react";
 import useFetch from "../../hooks/useFetch";
+import Skeleton from "../Skeleton/Skeleton";
 import "./propertyList.css";
 
 function PropertyList() {
@@ -17,7 +18,7 @@ function PropertyList() {
   return (
     <div className="pList">
       {loading ? (
-        "loading"
+        <Skeleton type="list"/>
       ) : (
         <>
          { data && images.map((img, i )=>(

@@ -62,7 +62,7 @@ function Reserve ({ setOpen, hotelId })  {
         })
       );
       setOpen(false);
-      navigate("/");
+      navigate("/success");
     } catch (err) {}
   };
   return (
